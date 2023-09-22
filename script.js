@@ -6,8 +6,7 @@ function getComputerChoice() {
     // if 3, make computerSelection "scissors"
 }
 
-// create a constant playerSelection
-// Player inputs "rock", "paper", or "scissors" into playerSelection
+
 
 function playRound(playerSelection, computerSelection) {
     // make playerSelection all lower case
@@ -22,4 +21,10 @@ function playRound(playerSelection, computerSelection) {
     // if playerSelection = "scissors" and computerSelection = "scissors", return "It's a draw!"
 }
 
-
+function game() {
+    // prompt the player for "rock", "paper", or "scissors"
+    // make that input playerSelection
+    // if all lower case of player isn't "rock", "paper", or "scissors" then return "Please choose "rock", "paper", or "scissors" and prompt the player again.
+    // if playerSelection is "rock", "paper", or "scissors" play a round
+    // repeat this a total of 5 times
+}
