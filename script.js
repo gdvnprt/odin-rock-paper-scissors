@@ -40,18 +40,18 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    let winCounter = 5; // create a variable winCounter = 0
-    for (let i = 0; i < 6; i++) { // repeat each round a total of 5 times
+    let winCounter = 5; // create a variable winCounter = 5
+    for (let i = 0; i < 5; i++) { // repeat each round a total of 5 times
         const playerSelection = window.prompt("Choose: rock, paper, or scissors."); // prompt the player for "rock", "paper", or "scissors"
         const computerSelection = getComputerChoice(); // create a constant computerSelection and make it getComputerChoice
         // if all lower case of player isn't "rock", "paper", or "scissors" then return "Please choose "rock", "paper", or "scissors" and prompt the player again.
         let roundResult = playRound(playerSelection, computerSelection); // if playerSelection is "rock", "paper", or "scissors" play a round
         if (roundResult.slice(0, 8) === "You win!") {
-            let winCounter = winCounter += 1;// if player wins, add 1 to WinCounter
+            winCounter++;// if player wins, add 1 to WinCounter
         } else if (roundResult.slice(0, 9) === "You lose!") {
-            let winCounter = winCounter -= 1;// if player loses, subtract 1 from winCounter
+            winCounter--;// if player loses, subtract 1 from winCounter
         } else {
-            let winCounter = winCounter += 0;// if it's a draw, add 0 to winCounter
+            winCounter + 0;// if it's a draw, add 0 to winCounter
         }
     }
     if (winCounter > 5) {
