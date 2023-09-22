@@ -1,9 +1,17 @@
 function getComputerChoice() {
     // Create a variable computerSelection
     // Choose a random integer 1, 2, or 3
+    const computerSelection = Math.floor(Math.random() * 3 + 1);
     // if 1, make computerSelection "rock"
     // if 2, make computerSelection "paper"
     // if 3, make computerSelection "scissors"
+    if (computerSelection === 1) {
+        return "rock";
+    } else if (computerSelection === 2) {
+        return "paper";
+    } else {
+        return "scissors";
+    }
 }
 
 
