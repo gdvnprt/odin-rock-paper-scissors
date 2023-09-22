@@ -40,10 +40,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+    //create a variable winCounter = 0
     // create a constant computerSelection and make it getComputerChoice
     // prompt the player for "rock", "paper", or "scissors"
     // make that input playerSelection
     // if all lower case of player isn't "rock", "paper", or "scissors" then return "Please choose "rock", "paper", or "scissors" and prompt the player again.
     // if playerSelection is "rock", "paper", or "scissors" play a round
-    // repeat this a total of 5 times
+    // if player wins, add 1 to WinCounter
+    // if player loses, subtract 1 from winCounter
+    // if it's a draw, add 0 to winCounter
+    // repeat each round a total of 5 times
+    // if winCounter > 0, return "You win the game!"
+    // if winCounter < 0, return "You lose the game!"
+    // if winCounter = 0, return "The game is a draw!"
 }
