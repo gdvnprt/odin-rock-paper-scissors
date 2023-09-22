@@ -40,17 +40,25 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    //create a variable winCounter = 0
-    // create a constant computerSelection and make it getComputerChoice
-    // prompt the player for "rock", "paper", or "scissors"
-    // make that input playerSelection
+    let winCounter = 5; // create a variable winCounter = 0
+    const playerSelection = window.prompt("Choose: rock, paper, or scissors."); // prompt the player for "rock", "paper", or "scissors"
+    const computerSelection = getComputerChoice(); // create a constant computerSelection and make it getComputerChoice
     // if all lower case of player isn't "rock", "paper", or "scissors" then return "Please choose "rock", "paper", or "scissors" and prompt the player again.
-    // if playerSelection is "rock", "paper", or "scissors" play a round
-    // if player wins, add 1 to WinCounter
-    // if player loses, subtract 1 from winCounter
-    // if it's a draw, add 0 to winCounter
+    let roundResult = playRound(playerSelection, computerSelection); // if playerSelection is "rock", "paper", or "scissors" play a round
+    if (roundResult.slice(0, 8) === "You win!") {
+        let winCounter = winCounter += 1;// if player wins, add 1 to WinCounter
+    } else if (roundResult.slice(0, 9) === "You lose!") {
+        let winCounter = winCounter -= 1;// if player loses, subtract 1 from winCounter
+    } else {
+        let winCounter = winCounter += 0;// if it's a draw, add 0 to winCounter
+    }
+}
     // repeat each round a total of 5 times
-    // if winCounter > 0, return "You win the game!"
-    // if winCounter < 0, return "You lose the game!"
-    // if winCounter = 0, return "The game is a draw!"
+    if (winCounter > 5) {
+        return "You win the game!"; // if winCounter > 0, return "You win the game!"
+    } else if (winCounter < 5) {
+        return "You lose the game!" // if winCounter < 0, return "You lose the game!"
+    } else {
+        return "The game is a draw!" // if winCounter = 0, return "The game is a draw!"
+    }
 }
