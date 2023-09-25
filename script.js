@@ -46,7 +46,7 @@ function game() {
         const computerSelection = getComputerChoice(); // create a constant computerSelection and make it getComputerChoice
         // if all lower case of player isn't "rock", "paper", or "scissors" then return "Please choose "rock", "paper", or "scissors" and prompt the player again.
         let roundResult = playRound(playerSelection, computerSelection); // if playerSelection is "rock", "paper", or "scissors" play a round
-        console.log(roundResult);
+        console.log(roundResult);  //show the result of the round 
         if (roundResult.slice(0, 8) === "You win!") {
             winCounter++;// if player wins, add 1 to WinCounter
         } else if (roundResult.slice(0, 9) === "You lose!") {
