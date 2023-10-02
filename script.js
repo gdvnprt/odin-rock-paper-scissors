@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
         return "You lose! Rock beats Scissors";
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
-        return "You win! Paper beats Rock";
+        return "You win! Scissors beats Paper";
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "scissors") {
         return "It's a draw!"; 
     } else {
@@ -60,3 +60,23 @@ function playRound(playerSelection, computerSelection) {
         return "The game is a draw!";
     }
 } */
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    let result = playRound("rock", computerSelection);
+    console.log(result);
+});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    let result = playRound("paper", computerSelection);
+    console.log(result);
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    const computerSelection = getComputerChoice();
+    let result = playRound("scissors", computerSelection);
+    console.log(result);
+});
