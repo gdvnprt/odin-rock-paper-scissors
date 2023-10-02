@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-function game() {
+/* function game() {
     let winCounter = 5;
     for (let i = 0; i < 5; i++) { 
         const playerSelection = window.prompt("Choose: rock, paper, or scissors."); 
@@ -59,4 +59,4 @@ function game() {
     } else {
         return "The game is a draw!";
     }
-}
+} */
