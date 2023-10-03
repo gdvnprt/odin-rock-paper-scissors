@@ -36,30 +36,6 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-/* function game() {
-    let winCounter = 5;
-    for (let i = 0; i < 5; i++) { 
-        const playerSelection = window.prompt("Choose: rock, paper, or scissors."); 
-        const computerSelection = getComputerChoice(); 
-        // if all lower case of player isn't "rock", "paper", or "scissors" then return "Please choose "rock", "paper", or "scissors" and prompt the player again.
-        let roundResult = playRound(playerSelection, computerSelection); // if playerSelection is "rock", "paper", or "scissors" play a round
-        console.log(roundResult);
-        if (roundResult.slice(0, 8) === "You win!") {
-            winCounter++;
-        } else if (roundResult.slice(0, 9) === "You lose!") {
-            winCounter--;
-        } else {
-            winCounter + 0;
-        }
-    }
-    if (winCounter > 5) {
-        return "You win the game!"; 
-    } else if (winCounter < 5) {
-        return "You lose the game!";
-    } else {
-        return "The game is a draw!";
-    }
-} */
 const roundResult = document.querySelector(".roundResult");
 const whoWonRound = document.createElement('p');
 
@@ -106,14 +82,14 @@ function reportWin(result) {
         playerWinNumber += 1;
         playerWinCount.textContent = playerWinNumber;
         playerWins.appendChild(playerWinCount);
-        if (playerWinNumber === 5) {
+        if (playerWinNumber === 5 && computerWinNumber < 5) {
             youWin();
         };
     } else if (result.slice(0, 9) === "You lose!") {
         computerWinNumber += 1;
         computerWinCount.textContent = computerWinNumber;
         computerWins.appendChild(computerWinCount);
-        if (computerWinNumber === 5) {
+        if (computerWinNumber === 5 && playerWinNumber < 5) {
             youLose();
         };
     };
@@ -146,3 +122,27 @@ scissors.addEventListener('click', () => {
     reportWin(result);
 });
 
+/* function game() {
+    let winCounter = 5;
+    for (let i = 0; i < 5; i++) { 
+        const playerSelection = window.prompt("Choose: rock, paper, or scissors."); 
+        const computerSelection = getComputerChoice(); 
+        // if all lower case of player isn't "rock", "paper", or "scissors" then return "Please choose "rock", "paper", or "scissors" and prompt the player again.
+        let roundResult = playRound(playerSelection, computerSelection); // if playerSelection is "rock", "paper", or "scissors" play a round
+        console.log(roundResult);
+        if (roundResult.slice(0, 8) === "You win!") {
+            winCounter++;
+        } else if (roundResult.slice(0, 9) === "You lose!") {
+            winCounter--;
+        } else {
+            winCounter + 0;
+        }
+    }
+    if (winCounter > 5) {
+        return "You win the game!"; 
+    } else if (winCounter < 5) {
+        return "You lose the game!";
+    } else {
+        return "The game is a draw!";
+    }
+} */
