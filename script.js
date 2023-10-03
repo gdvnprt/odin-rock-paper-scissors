@@ -75,16 +75,48 @@ let computerWinNumber = 0
 computerWinCount.textContent = computerWinNumber;
 computerWins.appendChild(computerWinCount);
 
-function reportWin(result) {
-    if (result.slice(0, 8) === "You win!") {
-        playerWinNumber++;
+function youWin() {
+    if (confirm("You win!\nPlay again?")) {
+        playerWinNumber -= 5;
         playerWinCount.textContent = playerWinNumber;
         playerWins.appendChild(playerWinCount);
-    } else if (result.slice(0, 9) === "You lose!") {
-        computerWinNumber++;
+        computerWinNumber -= computerWinNumber;
         computerWinCount.textContent = computerWinNumber;
         computerWins.appendChild(computerWinCount);
-    }
+        whoWonRound.textContent = "";
+        roundResult.appendChild(whoWonRound);
+    };
+};
+
+function youLose() {
+    if (confirm("You lose!\nPlay again?")) {
+        playerWinNumber -= playerWinNumber;
+        playerWinCount.textContent = playerWinNumber;
+        playerWins.appendChild(playerWinCount);
+        computerWinNumber -= 5;
+        computerWinCount.textContent = computerWinNumber;
+        computerWins.appendChild(computerWinCount);
+        whoWonRound.textContent = "";
+        roundResult.appendChild(whoWonRound);
+    };
+};
+
+function reportWin(result) {
+    if (result.slice(0, 8) === "You win!") {
+        playerWinNumber += 1;
+        playerWinCount.textContent = playerWinNumber;
+        playerWins.appendChild(playerWinCount);
+        if (playerWinNumber === 5) {
+            youWin();
+        };
+    } else if (result.slice(0, 9) === "You lose!") {
+        computerWinNumber += 1;
+        computerWinCount.textContent = computerWinNumber;
+        computerWins.appendChild(computerWinCount);
+        if (computerWinNumber === 5) {
+            youLose();
+        };
+    };
 };
 
 const rock = document.querySelector('#rock');
@@ -113,3 +145,4 @@ scissors.addEventListener('click', () => {
     roundResult.appendChild(whoWonRound);
     reportWin(result);
 });
+
