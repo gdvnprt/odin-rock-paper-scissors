@@ -1,0 +1,27 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+}
+
+.playerSelect button {
+    font-size: 20px;
+    height: 75px;
+    width: 150px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.wins {
+    display: flex;
+    justify-content: space-around;
+}
