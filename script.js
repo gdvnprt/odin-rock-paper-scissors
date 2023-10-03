@@ -60,23 +60,29 @@ function playRound(playerSelection, computerSelection) {
         return "The game is a draw!";
     }
 } */
+const roundResult = document.querySelector(".roundResult");
+const whoWonRound = document.createElement('p');
+
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     const computerSelection = getComputerChoice();
     let result = playRound("rock", computerSelection);
-    console.log(result);
+    whoWonRound.textContent = result;
+    roundResult.appendChild(whoWonRound);
 });
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
     const computerSelection = getComputerChoice();
     let result = playRound("paper", computerSelection);
-    console.log(result);
+    whoWonRound.textContent = result;
+    roundResult.appendChild(whoWonRound);
 });
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
     const computerSelection = getComputerChoice();
     let result = playRound("scissors", computerSelection);
-    console.log(result);
+    whoWonRound.textContent = result;
+    roundResult.appendChild(whoWonRound);
 });
