@@ -1,27 +1,73 @@
 body {
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
+    background-color: #d1f2eb;
+    color: #1b2631
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 40px;
 }
 
 .playerSelect button {
     font-size: 20px;
     height: 75px;
     width: 150px;
+    font-weight: bold;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
+}
+
+#rock {
+    background-color: #935116;
+    color: #F1C40F;
+    outline: 5px solid #F1C40F;
+}
+
+#paper {
+    background-color: white;
+    color: black;
+    outline: 5px solid black;
+}
+
+#scissors {
+    background-color: #b3b6b7;
+    color: #154360;
+    outline: 5px solid #154360;
 }
 
 .results {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-top: 25px;
+    gap: 25px;
+    font-size: 25px;
+}
+
+.roundResult {
+    margin-top: 25px;
 }
 
 .wins {
     display: flex;
     justify-content: space-around;
+    font-size: 60px;
+    align-items: flex-start;
+}
+
+.wins h3 {
+    font-size: 30px;
+}
+
+.playerWins p, .computerWins p {
+    margin-top: -10px;
 }

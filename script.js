@@ -36,6 +36,8 @@ function playRound(playerSelection, computerSelection) {
 
 const roundResult = document.querySelector(".roundResult");
 const whoWonRound = document.createElement('p');
+whoWonRound.textContent = "No result yet";
+roundResult.appendChild(whoWonRound);
 
 const playerWins = document.querySelector(".playerWins");
 const playerWinCount = document.createElement('p');
@@ -57,7 +59,7 @@ function youWin() {
         computerWinNumber -= computerWinNumber;
         computerWinCount.textContent = computerWinNumber;
         computerWins.appendChild(computerWinCount);
-        whoWonRound.textContent = "";
+        whoWonRound.textContent = "No result yet";
         roundResult.appendChild(whoWonRound);
     };
 };
@@ -70,7 +72,7 @@ function youLose() {
         computerWinNumber -= 5;
         computerWinCount.textContent = computerWinNumber;
         computerWins.appendChild(computerWinCount);
-        whoWonRound.textContent = "";
+        whoWonRound.textContent = "No result yet";
         roundResult.appendChild(whoWonRound);
     };
 };
