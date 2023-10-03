@@ -63,12 +63,37 @@ function playRound(playerSelection, computerSelection) {
 const roundResult = document.querySelector(".roundResult");
 const whoWonRound = document.createElement('p');
 
+const playerWins = document.querySelector(".playerWins");
+const playerWinCount = document.createElement('p');
+let playerWinNumber = 0
+playerWinCount.textContent = playerWinNumber;
+playerWins.appendChild(playerWinCount);
+
+const computerWins = document.querySelector(".computerWins");
+const computerWinCount = document.createElement('p');
+let computerWinNumber = 0
+computerWinCount.textContent = computerWinNumber;
+computerWins.appendChild(computerWinCount);
+
+function reportWin(result) {
+    if (result.slice(0, 8) === "You win!") {
+        playerWinNumber++;
+        playerWinCount.textContent = playerWinNumber;
+        playerWins.appendChild(playerWinCount);
+    } else if (result.slice(0, 9) === "You lose!") {
+        computerWinNumber++;
+        computerWinCount.textContent = computerWinNumber;
+        computerWins.appendChild(computerWinCount);
+    }
+};
+
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     const computerSelection = getComputerChoice();
     let result = playRound("rock", computerSelection);
     whoWonRound.textContent = result;
     roundResult.appendChild(whoWonRound);
+    reportWin(result);
 });
 
 const paper = document.querySelector('#paper');
@@ -77,6 +102,7 @@ paper.addEventListener('click', () => {
     let result = playRound("paper", computerSelection);
     whoWonRound.textContent = result;
     roundResult.appendChild(whoWonRound);
+    reportWin(result);
 });
 
 const scissors = document.querySelector('#scissors');
@@ -85,4 +111,5 @@ scissors.addEventListener('click', () => {
     let result = playRound("scissors", computerSelection);
     whoWonRound.textContent = result;
     roundResult.appendChild(whoWonRound);
+    reportWin(result);
 });
