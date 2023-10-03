@@ -9,8 +9,6 @@ function getComputerChoice() {
     }
 }
 
-
-
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "rock") {
         return "It's a draw!";
